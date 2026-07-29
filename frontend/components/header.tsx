@@ -1,7 +1,9 @@
 "use client";
 
+import { siteConfig } from "@/lib/config";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
+import Image from "next/image";
 import {
   useState,
   useRef,
@@ -342,11 +344,14 @@ export function Header(): ReactNode {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1, ease }}
           >
-            <div
-              className="w-6 h-6 rounded-full bg-white"
-              aria-hidden="true"
+            <Image
+              src="/logo.jpg"
+              alt="RobinSafe Logo"
+              width={32}
+              height={32}
+              className="w-8 h-8 rounded-lg"
             />
-            <span className="text-lg font-semibold text-white">finaro</span>
+            <span className="text-lg font-semibold text-white">{siteConfig.name}</span>
           </motion.a>
 
           <motion.nav
@@ -411,11 +416,14 @@ export function Header(): ReactNode {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1, ease }}
           >
-            <div
-              className="w-6 h-6 rounded-full bg-white"
-              aria-hidden="true"
+            <Image
+              src="/logo.jpg"
+              alt="RobinSafe Logo"
+              width={32}
+              height={32}
+              className="w-8 h-8 rounded-lg"
             />
-            <span className="text-lg font-semibold text-white">finaro</span>
+            <span className="text-lg font-semibold text-white">{siteConfig.name}</span>
           </motion.a>
           <motion.button
             className="p-2 -mr-2"
@@ -447,12 +455,15 @@ export function Header(): ReactNode {
                 aria-label="Home"
                 onClick={closeMobileMenu}
               >
-                <div
-                  className="w-6 h-6 rounded-full bg-foreground"
-                  aria-hidden="true"
+                <Image
+                  src="/logo.jpg"
+                  alt="RobinSafe Logo"
+                  width={32}
+                  height={32}
+                  className="w-8 h-8 rounded-lg"
                 />
                 <span className="text-lg font-semibold text-foreground">
-                  finaro
+                  {siteConfig.name}
                 </span>
               </a>
               <button
