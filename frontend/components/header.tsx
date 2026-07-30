@@ -23,53 +23,53 @@ type NavItem = {
 
 const navLinks: NavItem[] = [
   {
-    label: "Personal",
+    label: "Product",
     hasDropdown: true,
     items: [
-      { label: "Accounts", description: "Everyday spending and savings" },
-      { label: "Cards", description: "Virtual and physical cards" },
-      { label: "Transfers", description: "Send money globally, instantly" },
-      { label: "Crypto", description: "Buy, sell, and hold crypto" },
+      { label: "Execution Firewall", description: "Hard-gated session security at the execution layer" },
+      { label: "Zero-Trust Gates", description: "Anti-hallucination fail-closed enforcement" },
+      { label: "Session Locks", description: "Hardware-tethered approval flows" },
+      { label: "Agent Monitor", description: "Real-time agent threat detection" },
     ],
     promo: {
-      title: "Get your free card",
+      title: "Deploy FAILSAFE",
       description:
-        "Open an account in minutes and get a free debit card delivered.",
+        "Protect your AI agents from prompt injection and wallet-draining attacks.",
       href: "#",
     },
   },
   {
-    label: "Business",
+    label: "$SAFE Token",
     hasDropdown: true,
     items: [
-      { label: "Business Accounts", description: "Manage company finances" },
-      { label: "Corporate Cards", description: "Employee expense cards" },
-      { label: "Invoicing", description: "Create and send invoices" },
-      { label: "Payroll", description: "Pay your team worldwide" },
+      { label: "Tokenomics", description: "Token distribution and vesting" },
+      { label: "Utility", description: "How $SAFE powers the protocol" },
+      { label: "Staking", description: "Earn rewards for securing agents" },
+      { label: "Roadmap", description: "What's coming to FAILSAFE" },
     ],
     promo: {
-      title: "Business banking",
-      description: "Open a business account with no monthly fees.",
+      title: "Buy $SAFE",
+      description: "Powered by Virtuals Protocol on Base Network.",
       href: "#",
     },
   },
   {
-    label: "Pricing",
+    label: "Docs",
     href: "#",
   },
   {
-    label: "Company",
+    label: "Community",
     hasDropdown: true,
     items: [
-      { label: "About us", description: "Our story and mission" },
-      { label: "Careers", description: "Join our growing team" },
-      { label: "Press", description: "News and media resources" },
-      { label: "Security", description: "How we keep you safe" },
+      { label: "Twitter / X", description: "Follow @RobinSafe_io for updates" },
+      { label: "About", description: "Our mission and story" },
+      { label: "Blog", description: "Security research and deep dives" },
+      { label: "Contact", description: "Get in touch with the team" },
     ],
     promo: {
-      title: "We're hiring",
-      description: "Join 8,000+ people building the future of finance.",
-      href: "#",
+      title: "Join the movement",
+      description: "Building the sovereign execution layer for agentic AI.",
+      href: "https://twitter.com/RobinSafe_io",
     },
   },
 ];
@@ -392,15 +392,15 @@ export function Header(): ReactNode {
           >
             <a
               href="#"
-              className="px-5 py-2.5 text-sm font-semibold tracking-tighter text-black bg-white rounded-full hover:bg-white/90 transition-colors"
+              className="px-5 py-2.5 text-sm font-semibold tracking-widest text-black bg-accent rounded-full hover:bg-accent/90 transition-colors font-mono uppercase"
             >
-              Log in
+              Buy $SAFE
             </a>
             <a
               href="#"
-              className="px-5 py-2.5 text-sm font-semibold tracking-tighter text-white border border-white rounded-full hover:bg-white/10 transition-colors"
+              className="px-5 py-2.5 text-sm font-semibold tracking-widest text-accent border border-accent/40 rounded-full hover:bg-accent/10 transition-colors font-mono uppercase"
             >
-              Sign up
+              Docs
             </a>
           </motion.div>
         </div>
@@ -508,17 +508,17 @@ export function Header(): ReactNode {
               <div className="flex flex-col gap-3 pt-6">
                 <a
                   href="#"
-                  className="w-full py-3 text-center text-sm font-medium tracking-tight text-background bg-foreground rounded-full hover:bg-foreground/90 transition-colors"
+                  className="w-full py-3 text-center text-sm font-bold tracking-widest text-black bg-accent rounded-full hover:bg-accent/90 transition-colors font-mono uppercase"
                   onClick={closeMobileMenu}
                 >
-                  Log in
+                  Buy $SAFE
                 </a>
                 <a
                   href="#"
-                  className="w-full py-3 text-center text-sm font-medium tracking-tight text-foreground border border-border rounded-full hover:bg-muted transition-colors"
+                  className="w-full py-3 text-center text-sm font-bold tracking-widest text-accent border border-accent/40 rounded-full hover:bg-accent/10 transition-colors font-mono uppercase"
                   onClick={closeMobileMenu}
                 >
-                  Sign up
+                  Docs
                 </a>
               </div>
             </nav>

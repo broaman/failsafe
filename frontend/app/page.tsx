@@ -15,7 +15,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 export const metadata: Metadata = createMetadata({
-  title: `${siteConfig.name} - Modern Banking for Modern Business`,
+  title: `${siteConfig.name} // Sovereign Execution Firewall for Agentic AI ($SAFE)`,
   description: siteConfig.description,
   path: "/",
 });

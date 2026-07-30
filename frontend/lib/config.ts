@@ -8,20 +8,21 @@
  */
 
 export const siteConfig = {
-  name: "RobinSafe",
-  tagline: "Building Firewall for AI Agents",
+  name: "FAILSAFE",
+  tagline: "Sovereign Execution Firewall for Agentic AI",
   description:
-    "Protect your AI agents and digital assets with RobinSafe. Advanced firewall protection for the age of autonomous AI agents on Virtuals Protocol.",
+    "Give your AI root access without giving up control. Hard-gated session security and hardware-tethered zero-trust firewall for autonomous AI agents.",
   url: "https://robinsafe.io",
   twitter: "@RobinSafe_io",
+  token: "$SAFE",
 
   nav: {
     cta: {
-      text: "Get Started",
+      text: "Get $SAFE",
       href: "#",
     },
     signIn: {
-      text: "Sign in",
+      text: "Docs",
       href: "#",
     },
   },
@@ -29,65 +30,67 @@ export const siteConfig = {
 
 export const heroConfig = {
   headline: {
-    line1: "Firewall for",
-    line2: "AI Agents",
+    line1: "Sovereign Execution",
+    line2: "Firewall for Agentic AI",
   },
+  badge: "FAILSAFE // $SAFE",
   description:
-    "Real security doesn't live in the prompt, it lives at the execution layer. Protect your AI agents from malicious inputs and keep your funds safe.",
+    "Give your AI root access without giving up control. Hard-gated session security and hardware-tethered zero-trust firewall.",
+  subtext: "Real security doesn't live in the prompt — it lives at the execution layer.",
   cta: {
     primary: {
-      text: "Get Protected",
+      text: "Buy $SAFE",
       href: "#",
     },
     secondary: {
-      text: "Learn More",
+      text: "Read Docs",
       href: "#",
     },
   },
 } as const;
 
 export const trustedByConfig = {
-  title: "Trusted by industry leaders",
+  title: "Integrated with leading AI infrastructure",
 } as const;
 
 export const featureCardsConfig = {
-  title: "The new standard",
-  subtitle: "for AI agent security",
+  title: "Hard-gated security",
+  subtitle: "at the execution layer",
 } as const;
 
 export const featureHighlightConfig = {
   features: [
     {
-      icon: "trending-up",
-      text: "Real-time analytics and insights for smarter decisions.",
+      icon: "shield",
+      text: "Session-locked security boundaries that can't be bypassed by prompt injection.",
     },
     {
-      icon: "message-square",
-      text: "Ask questions about your finances in plain English.",
+      icon: "zap",
+      text: "Hardware-tethered approvals with anti-hallucination fail-closed gates.",
     },
   ],
 } as const;
 
 export const principlesConfig = {
-  title: "Built on principles that matter",
+  title: "Zero-trust by design. Fail-closed by default.",
 } as const;
 
 export const statsConfig = {
   stats: [
-    { value: 5, suffix: "B+", prefix: "$", label: "Processed annually" },
-    { value: 99.9, suffix: "%", label: "Uptime guarantee" },
-    { value: 150, suffix: "+", label: "Countries supported" },
-    { value: 2, suffix: "M+", label: "Active users" },
+    { value: 100, suffix: "%", label: "Fail-closed on breach" },
+    { value: 0, suffix: "ms", label: "Prompt bypass tolerance" },
+    { value: 99.9, suffix: "%", label: "Uptime SLA" },
+    { value: 1, suffix: "st", label: "Execution-layer firewall" },
   ],
 } as const;
 
 export const testimonialsConfig = {
-  title: "Trusted by Finance Leaders",
+  title: "Trusted by AI Builders",
 } as const;
 
 export const pricingConfig = {
-  title: "Plans that grow with you",
-  trustBadge: "Trusted by 50,000+ businesses",
+  title: "Secure your agents today",
+  trustBadge: "Powered by $SAFE token on Virtuals Protocol",
 } as const;
 
 export const faqConfig = {
@@ -95,48 +98,48 @@ export const faqConfig = {
   contact: {
     text: "Still have questions?",
     cta: {
-      text: "Contact Support",
-      href: "mailto:support@robinsafe.io",
+      text: "Join our community",
+      href: "https://twitter.com/RobinSafe_io",
     },
   },
 } as const;
 
 export const blogConfig = {
-  title: "Latest from our blog",
-  description: "Insights, guides, and news to help you make smarter financial decisions.",
+  title: "From the FAILSAFE terminal",
+  description: "Deep dives on agentic AI security, prompt injection attacks, and execution-layer defense.",
   cta: {
-    text: "View all articles",
+    text: "View all posts",
     href: "#",
   },
 } as const;
 
 export const finalCtaConfig = {
-  headline: "Ready to protect your AI agents?",
-  description: "Join the Virtuals Protocol ecosystem with RobinSafe's advanced firewall protection for autonomous agents.",
+  headline: "Your AI shouldn't be one prompt away from draining your wallet.",
+  description: "Deploy FAILSAFE. Hard-gate your agents. Sleep at night.",
   cta: {
-    text: "Get Started Free",
+    text: "Get $SAFE Now",
     href: "#",
   },
 } as const;
 
 export const footerConfig = {
   description:
-    "Building firewall for AI agents on Virtuals Protocol. Execution-layer security that keeps your autonomous agents safe from malicious inputs.",
+    "FAILSAFE // Sovereign Execution Firewall for Agentic AI. Built on Virtuals Protocol. Powered by $SAFE.",
   cta: {
-    text: "Deploy Firewall",
+    text: "Deploy FAILSAFE",
     href: "#",
   },
   links: {
     product: [
-      { label: "Personal", href: "#" },
-      { label: "Business", href: "#" },
-      { label: "Enterprise", href: "#" },
-      { label: "API", href: "#" },
+      { label: "How It Works", href: "#" },
+      { label: "Tokenomics", href: "#" },
+      { label: "Roadmap", href: "#" },
+      { label: "API Docs", href: "#" },
     ],
     company: [
       { label: "About", href: "#" },
       { label: "Blog", href: "#" },
-      { label: "Careers", href: "#" },
+      { label: "Twitter", href: "https://twitter.com/RobinSafe_io" },
       { label: "Contact", href: "#" },
     ],
     legal: [
@@ -146,12 +149,12 @@ export const footerConfig = {
     ],
   },
   contact: {
-    location: "San Francisco",
-    address: "548 Market St, Suite 95000\nSan Francisco, CA 94104",
-    hours: "Mon-Fri 9:00 am - 6:00 pm (PST)",
+    location: "On-chain",
+    address: "Virtuals Protocol\nBase Network",
+    hours: "24/7 — always on-chain",
     email: "hello@robinsafe.io",
   },
-  copyright: `© ${new Date().getFullYear()} RobinSafe. All rights reserved.`,
+  copyright: `© ${new Date().getFullYear()} FAILSAFE. All rights reserved. $SAFE token is not financial advice.`,
 } as const;
 
 /**
@@ -178,6 +181,6 @@ export const features = {
  * This config controls which theme features are enabled.
  */
 export const themeConfig = {
-  defaultTheme: "system" as "light" | "dark" | "system",
-  enableSystemTheme: true,
+  defaultTheme: "dark" as "light" | "dark" | "system",
+  enableSystemTheme: false,
 } as const;

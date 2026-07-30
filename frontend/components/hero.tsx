@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, type ReactNode } from "react";
+import { heroConfig } from "@/lib/config";
 import { ChevronRight, Shield } from "lucide-react";
 import { motion } from "motion/react";
 import * as THREE from "three";
@@ -96,8 +97,8 @@ const fragmentShader = `
     vec2 displacement = toMouse * influence / (dist + 0.1);
     vec2 displacedUv = uv + displacement;
     
-    // Dark base
-    vec3 col = vec3(0.02, 0.02, 0.06);
+    // Pitch black base
+    vec3 col = vec3(0.02, 0.02, 0.02);
     
     // Aurora beams from bottom - displaced by cursor
     float beam1 = snoise(vec3(displacedUv.x * 1.5 + t * 0.5, displacedUv.y * 0.8 - t * 0.2, t * 0.3));
@@ -113,26 +114,26 @@ const fragmentShader = `
     float light2 = smoothstep(0.0, 0.7, beam2 * verticalFade);
     float light3 = smoothstep(0.0, 0.6, beam3 * verticalFade2);
     
-    // Colors - warm to cool spectrum
-    vec3 orange = vec3(0.95, 0.4, 0.1);
-    vec3 red = vec3(0.85, 0.15, 0.2);
-    vec3 pink = vec3(0.7, 0.2, 0.4);
-    vec3 blue = vec3(0.1, 0.3, 0.7);
-    vec3 cyan = vec3(0.1, 0.6, 0.8);
+    // Colors - acid green / dark green spectrum
+    vec3 acidGreen = vec3(0.22, 1.0, 0.08);
+    vec3 darkGreen = vec3(0.05, 0.5, 0.05);
+    vec3 neonGreen = vec3(0.1, 0.9, 0.3);
+    vec3 deepGreen = vec3(0.0, 0.25, 0.05);
+    vec3 emerald = vec3(0.05, 0.7, 0.2);
     
     // Position-based color mixing
     float xPos = uv.x / (iResolution.x / iResolution.y);
     
     // Layer the colors
-    col += orange * light1 * 0.6 * smoothstep(0.6, 0.2, xPos);
-    col += red * light1 * 0.5 * smoothstep(0.3, 0.5, xPos) * smoothstep(0.7, 0.5, xPos);
-    col += pink * light2 * 0.4 * smoothstep(0.4, 0.6, xPos);
-    col += blue * light3 * 0.5 * smoothstep(0.5, 0.8, xPos);
-    col += cyan * light2 * 0.3 * smoothstep(0.7, 1.0, xPos);
+    col += darkGreen * light1 * 0.6 * smoothstep(0.6, 0.2, xPos);
+    col += acidGreen * light1 * 0.4 * smoothstep(0.3, 0.5, xPos) * smoothstep(0.7, 0.5, xPos);
+    col += neonGreen * light2 * 0.35 * smoothstep(0.4, 0.6, xPos);
+    col += deepGreen * light3 * 0.5 * smoothstep(0.5, 0.8, xPos);
+    col += emerald * light2 * 0.25 * smoothstep(0.7, 1.0, xPos);
     
     // Add subtle glow at bottom center
     float centerGlow = exp(-pow((xPos - 0.5) * 2.0, 2.0)) * verticalFade2;
-    col += vec3(0.9, 0.5, 0.3) * centerGlow * 0.3;
+    col += vec3(0.1, 0.8, 0.1) * centerGlow * 0.25;
     
     // Slight vignette
     float vignette = 1.0 - pow(length(uv - vec2(0.5 * iResolution.x / iResolution.y, 0.5)) * 0.8, 2.0);
@@ -262,19 +263,19 @@ export function Hero(): ReactNode {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3, ease }}
-              className="cursor-pointer flex items-center gap-2 pl-4 pr-3 py-1.5 bg-white rounded-full mb-6"
+              className="cursor-pointer flex items-center gap-2 pl-4 pr-3 py-1.5 border border-accent/40 bg-accent/10 rounded-full mb-6"
             >
-              <span className="text-xs font-medium text-black">New: Instant global transfers</span>
-              <ChevronRight className="w-3 h-3 text-black/50" />
+              <span className="text-xs font-mono font-medium text-accent">{heroConfig.badge}</span>
+              <ChevronRight className="w-3 h-3 text-accent/70" />
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5, ease }}
-              className="text-4xl sm:text-5xl md:text-6xl font-medium font-serif text-white text-left lg:text-center leading-tighter tracking-tight max-w-3xl"
+              className="text-4xl sm:text-5xl md:text-6xl font-bold text-white text-left lg:text-center leading-tighter tracking-tight max-w-3xl font-mono uppercase"
             >
-              Spend, save, & invest with<br/> one powerful app
+              {heroConfig.headline.line1}<br/>{heroConfig.headline.line2}
             </motion.h1>
 
             <motion.p
@@ -283,7 +284,16 @@ export function Hero(): ReactNode {
               transition={{ duration: 0.6, delay: 0.7, ease }}
               className="mt-5 text-lg text-white/70 text-left lg:text-center max-w-xl"
             >
-              Join 45 million people managing their money better with instant transfers, smart budgeting, and zero foreign exchange fees.
+              {heroConfig.description}
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8, ease }}
+              className="mt-2 text-sm text-accent/80 text-left lg:text-center max-w-xl font-mono italic"
+            >
+              {heroConfig.subtext}
             </motion.p>
 
             <motion.div
@@ -292,27 +302,28 @@ export function Hero(): ReactNode {
               transition={{ duration: 0.6, delay: 0.9, ease }}
               className="flex flex-col lg:flex-row items-stretch lg:items-center gap-3 mt-10 w-full lg:w-auto"
             >
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="h-12 w-full lg:w-72 px-5 text-sm bg-transparent border border-white/20 rounded-full text-white placeholder:text-white/50 focus:outline-none focus:border-white/40"
-              />
-              <button
-                type="button"
-                className="cursor-pointer h-12 px-6 text-sm font-medium bg-white text-black rounded-full hover:bg-white/90 active:scale-[0.97] transition-all duration-150 flex items-center justify-center gap-2 whitespace-nowrap"
+              <a
+                href={heroConfig.cta.primary.href}
+                className="cursor-pointer h-12 px-8 text-sm font-bold bg-accent text-black rounded-full hover:bg-accent/90 active:scale-[0.97] transition-all duration-150 flex items-center justify-center gap-2 whitespace-nowrap font-mono uppercase tracking-widest"
               >
-                Get Started
-              </button>
+                {heroConfig.cta.primary.text}
+              </a>
+              <a
+                href={heroConfig.cta.secondary.href}
+                className="cursor-pointer h-12 px-8 text-sm font-medium border border-accent/40 text-accent rounded-full hover:bg-accent/10 active:scale-[0.97] transition-all duration-150 flex items-center justify-center gap-2 whitespace-nowrap font-mono uppercase tracking-widest"
+              >
+                {heroConfig.cta.secondary.text}
+              </a>
             </motion.div>
 
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 1.1, ease }}
-              className="flex items-center gap-2 mt-6 text-sm text-white/60"
+              className="flex items-center gap-2 mt-6 text-sm text-white/40 font-mono"
             >
-              <Shield className="w-4 h-4" />
-              Industry-leading security. No hidden fees.
+              <Shield className="w-4 h-4 text-accent/60" />
+              Fail-closed by default. Zero-trust by design.
             </motion.p>
           </div>
         </motion.div>
