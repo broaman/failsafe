@@ -265,7 +265,7 @@ export function Hero(): ReactNode {
               transition={{ duration: 0.6, delay: 0.3, ease }}
               className="cursor-pointer flex items-center gap-2 pl-4 pr-3 py-1.5 border border-accent/40 bg-accent/10 rounded-full mb-6"
             >
-              <span className="text-xs font-mono font-medium text-accent">{heroConfig.badge}</span>
+              <span className="text-xs font-mono font-medium text-accent">RobinSafe // $SAFE — Launching on @virtuals_io soon</span>
               <ChevronRight className="w-3 h-3 text-accent/70" />
             </motion.div>
 

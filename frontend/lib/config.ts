@@ -8,7 +8,7 @@
  */
 
 export const siteConfig = {
-  name: "FAILSAFE",
+  name: "RobinSafe",
   tagline: "Sovereign Execution Firewall for Agentic AI",
   description:
     "Give your AI root access without giving up control. Hard-gated session security and hardware-tethered zero-trust firewall for autonomous AI agents.",
