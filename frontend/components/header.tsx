@@ -390,12 +390,9 @@ export function Header(): ReactNode {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3, ease }}
           >
-            <a
-              href="#"
-              className="px-5 py-2.5 text-sm font-semibold tracking-widest text-black bg-accent rounded-full hover:bg-accent/90 transition-colors font-mono uppercase"
-            >
-              Buy $SAFE
-            </a>
+            <div className="px-4 py-2 text-xs font-mono font-semibold text-accent border border-accent/30 bg-accent/5 rounded-full tracking-wide">
+              🚀 Launching on @virtuals_io
+            </div>
             <a
               href="#"
               className="px-5 py-2.5 text-sm font-semibold tracking-widest text-accent border border-accent/40 rounded-full hover:bg-accent/10 transition-colors font-mono uppercase"
@@ -506,13 +503,9 @@ export function Header(): ReactNode {
               )}
 
               <div className="flex flex-col gap-3 pt-6">
-                <a
-                  href="#"
-                  className="w-full py-3 text-center text-sm font-bold tracking-widest text-black bg-accent rounded-full hover:bg-accent/90 transition-colors font-mono uppercase"
-                  onClick={closeMobileMenu}
-                >
-                  Buy $SAFE
-                </a>
+                <div className="w-full py-3 text-center text-sm font-bold tracking-wide text-accent border border-accent/30 bg-accent/5 rounded-full font-mono">
+                  🚀 Token launching soon on @virtuals_io
+                </div>
                 <a
                   href="#"
                   className="w-full py-3 text-center text-sm font-bold tracking-widest text-accent border border-accent/40 rounded-full hover:bg-accent/10 transition-colors font-mono uppercase"

@@ -265,7 +265,7 @@ export function Hero(): ReactNode {
               transition={{ duration: 0.6, delay: 0.3, ease }}
               className="cursor-pointer flex items-center gap-2 pl-4 pr-3 py-1.5 border border-accent/40 bg-accent/10 rounded-full mb-6"
             >
-              <span className="text-xs font-mono font-medium text-accent">RobinSafe // $SAFE — Launching on @virtuals_io soon</span>
+              <span className="text-xs font-mono font-medium text-accent">Launching soon on @virtuals_io</span>
               <ChevronRight className="w-3 h-3 text-accent/70" />
             </motion.div>
 
@@ -302,15 +302,12 @@ export function Hero(): ReactNode {
               transition={{ duration: 0.6, delay: 0.9, ease }}
               className="flex flex-col lg:flex-row items-stretch lg:items-center gap-3 mt-10 w-full lg:w-auto"
             >
-              <a
-                href={heroConfig.cta.primary.href}
-                className="cursor-pointer h-12 px-8 text-sm font-bold bg-accent text-black rounded-full hover:bg-accent/90 active:scale-[0.97] transition-all duration-150 flex items-center justify-center gap-2 whitespace-nowrap font-mono uppercase tracking-widest"
-              >
-                {heroConfig.cta.primary.text}
-              </a>
+              <div className="h-12 px-8 text-sm font-bold border border-accent/30 bg-accent/5 text-accent rounded-full flex items-center justify-center gap-2 whitespace-nowrap font-mono tracking-widest">
+                🚀 Token launching soon on @virtuals_io
+              </div>
               <a
                 href={heroConfig.cta.secondary.href}
-                className="cursor-pointer h-12 px-8 text-sm font-medium border border-accent/40 text-accent rounded-full hover:bg-accent/10 active:scale-[0.97] transition-all duration-150 flex items-center justify-center gap-2 whitespace-nowrap font-mono uppercase tracking-widest"
+                className="cursor-pointer h-12 px-8 text-sm font-medium border border-white/20 text-white/70 rounded-full hover:bg-white/5 active:scale-[0.97] transition-all duration-150 flex items-center justify-center gap-2 whitespace-nowrap font-mono uppercase tracking-widest"
               >
                 {heroConfig.cta.secondary.text}
               </a>
